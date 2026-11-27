@@ -3,15 +3,15 @@
 A Geode mod for Geometry Dash 2.2091 that aims to fix frustrating gameplay bugs without altering intentional mechanics, creative techniques, or visual/audio behavior.
 
 ## Current implementation
-- [x] Input-state tracking hook for routed jump press/release events (instrumentation only).
-- [ ] Held-input resynchronization at level start.
-- [ ] Held-input resynchronization after Practice checkpoints.
+- [x] Jump input-state tracking for P1 and P2.
+- [x] Experimental re-routing of a tracked held jump after `PlayLayer::resetLevel` when the Practice-resync setting is enabled.
+- [ ] Held-input resynchronization at level start (hardware state detection remains unresolved).
 - [ ] Practice checkpoint state restoration.
 - [ ] Trigger-state reset inconsistencies.
 - [ ] Confirmed collision/physics edge cases.
 
-## Notes
-The current input tracker records jump transitions routed through `GJBaseGameLayer::handleButton`. It does **not** yet synthesize or restore inputs, so it does not claim to fix held-input loss. The hook needs to be compiled and validated against the target Geode SDK/platform before release.
+## Experimental behavior
+The checkpoint feature re-routes a press for jump inputs the tracker observed as held before `resetLevel`. It may not cover inputs that never reached the game's input handler, and must be compiled and tested on the target build before use. The setting is independently toggleable.
 
 ## Build
 Build with the Geode SDK's standard CMake workflow for the target platform. No release binary is provided.
