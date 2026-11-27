@@ -2,21 +2,16 @@
 
 A Geode mod for Geometry Dash 2.2091 that aims to fix frustrating gameplay bugs without altering intentional mechanics, creative techniques, or visual/audio behavior.
 
-## Project foundation
-- Modular fix registry: each fix should be isolated and independently toggleable.
-- Configuration switches are defined in `mod.json`.
-- Diagnostics setting for initialization/module status.
-- Fix switches are scaffolding only until their implementation and reproduction tests are verified.
+## Current implementation
+- [x] Input-state tracking hook for routed jump press/release events (instrumentation only).
+- [ ] Held-input resynchronization at level start.
+- [ ] Held-input resynchronization after Practice checkpoints.
+- [ ] Practice checkpoint state restoration.
+- [ ] Trigger-state reset inconsistencies.
+- [ ] Confirmed collision/physics edge cases.
 
-## Planned modules
-- [ ] Held input at level start
-- [ ] Held input after Practice checkpoints
-- [ ] Practice checkpoint state restoration
-- [ ] Trigger-state reset inconsistencies
-- [ ] Confirmed collision/physics edge cases
+## Notes
+The current input tracker records jump transitions routed through `GJBaseGameLayer::handleButton`. It does **not** yet synthesize or restore inputs, so it does not claim to fix held-input loss. The hook needs to be compiled and validated against the target Geode SDK/platform before release.
 
 ## Build
-Build with the Geode SDK's standard CMake workflow for the target platform. This scaffold has not yet been compiled against a platform-specific SDK and should not be treated as a release binary.
-
-## Scope
-No audio fixes, visual-only bugs, or intentionally useful gameplay mechanics.
+Build with the Geode SDK's standard CMake workflow for the target platform. No release binary is provided.
