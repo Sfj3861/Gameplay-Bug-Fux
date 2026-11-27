@@ -8,6 +8,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_library(GameplayBugFixes SHARED
     src/main.cpp
     src/fix_registry.cpp
+    src/input_tracker.cpp
 )
 
 setup_geode_mod(GameplayBugFixes)
