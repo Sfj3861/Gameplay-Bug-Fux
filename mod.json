@@ -5,8 +5,38 @@
   "name": "Gameplay Bug Fixes",
   "version": "0.1.0",
   "developer": "Sfj3861",
-  "description": "A focused collection of fixes for frustrating gameplay bugs. Initial build scaffolding.",
+  "description": "Fixes frustrating gameplay bugs while preserving intentional gameplay behavior.",
   "dependencies": {
     "geode.loader": ">=4.0.0"
-  }
+  },
+  "settings": [
+    {
+      "type": "bool",
+      "id": "fix-held-input-start",
+      "name": "Held input at level start",
+      "description": "Enable the fix for inputs held while gameplay begins (when implemented).",
+      "default": true
+    },
+    {
+      "type": "bool",
+      "id": "fix-held-input-checkpoint",
+      "name": "Held input after checkpoints",
+      "description": "Enable the fix for held inputs after Practice respawns (when implemented).",
+      "default": true
+    },
+    {
+      "type": "bool",
+      "id": "fix-practice-state",
+      "name": "Practice state restoration",
+      "description": "Enable confirmed Practice checkpoint state fixes (when implemented).",
+      "default": true
+    },
+    {
+      "type": "bool",
+      "id": "diagnostics",
+      "name": "Diagnostics",
+      "description": "Log mod initialization and fix-module status.",
+      "default": false
+    }
+  ]
 }
