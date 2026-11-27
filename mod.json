@@ -20,8 +20,8 @@
     {
       "type": "bool",
       "id": "fix-held-input-checkpoint",
-      "name": "Held input after checkpoints",
-      "description": "Enable the fix for held inputs after Practice respawns (when implemented).",
+      "name": "Held input after Practice resets",
+      "description": "Experimental: re-route a tracked held jump after a Practice reset (requires testing).",
       "default": true
     },
     {
